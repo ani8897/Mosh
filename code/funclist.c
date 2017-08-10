@@ -84,6 +84,7 @@ pid_t funcList(char** tokens, int tokenLength, int background){
             if(pid == 0){
                 //Inside child process
 
+                //Set process group id for background process
                 if(background){
                     setpgid(0,0);
                 }
@@ -111,6 +112,7 @@ pid_t funcList(char** tokens, int tokenLength, int background){
         if(pid == 0){
             //Inside child process
 
+            //Set process group id for background process
             if(background){
                 setpgid(0,0);
             }
